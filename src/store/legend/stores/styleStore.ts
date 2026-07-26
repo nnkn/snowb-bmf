@@ -152,7 +152,7 @@ function createDefaultPatternTexture(): PatternTextureData {
 function createDefaultFill(): FillData {
   return {
     type: FillType.SOLID,
-    color: '#000000',
+    color: '#ffffff',
     gradient: createDefaultGradient(),
     patternTexture: createDefaultPatternTexture(),
   }
@@ -226,7 +226,7 @@ function createDefaultStyle(): StyleData {
     shadow: createDefaultShadow(),
     useInnerShadow: false,
     innerShadow: createDefaultShadow(),
-    bgColor: 'rgba(0,0,0,0)',
+    bgColor: '#000000',
     render: createDefaultRender(),
   }
 }
