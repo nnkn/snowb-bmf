@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'
 import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 /// <reference types="vitest" />
 
@@ -13,6 +13,7 @@ export default defineConfig(({}) => ({
       jsxImportSource: '@emotion/react',
     }),
     VitePWA({
+      base: process.env.VITE_BASE_PATH || '/',
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'service-worker.ts',
@@ -25,27 +26,27 @@ export default defineConfig(({}) => ({
           {
             src: 'favicon.ico',
             sizes: '128x128 64x64 32x32 24x24 16x16',
-            type: 'image/x-icon'
+            type: 'image/x-icon',
           },
           {
             src: 'logo192.png',
             type: 'image/png',
-            sizes: '192x192'
+            sizes: '192x192',
           },
           {
             src: 'logo512.png',
             type: 'image/png',
-            sizes: '512x512'
-          }
+            sizes: '512x512',
+          },
         ],
         start_url: '.',
         display: 'fullscreen',
         theme_color: '#1e1e1e',
-        background_color: '#1e1e1e'
-      }
+        background_color: '#1e1e1e',
+      },
     }),
   ],
-  
+
   // Development server configuration
   server: {
     port: 3000,
@@ -53,13 +54,13 @@ export default defineConfig(({}) => ({
     open: true,
     cors: true,
   },
-  
+
   // Preview server configuration
   preview: {
     port: 3000,
     host: true,
   },
-  
+
   // Build configuration
   build: {
     outDir: 'build',
@@ -81,7 +82,7 @@ export default defineConfig(({}) => ({
     // Asset inline threshold
     assetsInlineLimit: 4096,
   },
-  
+
   // Path aliases
   resolve: {
     alias: {
@@ -90,28 +91,28 @@ export default defineConfig(({}) => ({
       '@/store': resolve(__dirname, 'src/store'),
       '@/utils': resolve(__dirname, 'src/utils'),
       '@/types': resolve(__dirname, 'types'),
-      'src': resolve(__dirname, 'src'),
+      src: resolve(__dirname, 'src'),
     },
   },
-  
+
   // Define global constants
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
-  
+
   // Web Workers configuration
   worker: {
     format: 'es',
   },
-  
+
   // Environment variables configuration
   envPrefix: 'VITE_',
-  
+
   // esbuild configuration
   esbuild: {
     target: 'es2020',
   },
-  
+
   // Optimize dependency pre-bundling
   optimizeDeps: {
     include: [
@@ -126,7 +127,7 @@ export default defineConfig(({}) => ({
       'fontkit',
     ],
   },
-  
+
   // Test configuration
   test: {
     globals: true,
@@ -134,4 +135,4 @@ export default defineConfig(({}) => ({
     setupFiles: ['./src/setupTests.ts'],
     css: true,
   },
-})) 
+}))
