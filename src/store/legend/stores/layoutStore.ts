@@ -49,8 +49,8 @@ export interface LayoutStoreState {
 
 function createDefaultLayout(): LayoutData {
   return {
-    padding: 1,
-    spacing: 1,
+    padding: 0,
+    spacing: 0,
     width: 512,
     height: 512,
     auto: true,
