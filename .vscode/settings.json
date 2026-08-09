@@ -1,3 +1,17 @@
 {
-    "specstory.cloudSync.enabled": "never"
+  "specstory.cloudSync.enabled": "never",
+  "actionButtons": {
+    "reloadButton": "↻", // 是否显示重载插件按钮
+    "defaultColor": "#ffCC00",
+    "commands": [
+      {
+        "name": "🚀 一键生成", // 按钮上显示的文字
+        "color": "#00FF00", // 按钮颜色（绿色）
+        "useVsCodeApi": true,
+        "singleInstance": true,
+        "command": "workbench.action.tasks.runTask", // 触发内置运行任务的命令
+        "args": ["一键生成并复制"] // 这里必须和你在 tasks.json 里的 label 完全一致
+      }
+    ]
+  }
 }

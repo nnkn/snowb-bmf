@@ -48,3 +48,4 @@ wasm/msdfgen/
 wasm/freetype/
 wasm/*.ttf
 wasm/*.TTF
+build.js
