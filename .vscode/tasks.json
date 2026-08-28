@@ -4,7 +4,7 @@
         {
             "label": "一键生成并复制",
             "type": "shell",
-            "command": "node build.js",
+            "command": "yarn build --base=/snowb/",
             "group": {
                 "kind": "build",
                 "isDefault": true
